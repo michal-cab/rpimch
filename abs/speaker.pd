@@ -1,15 +1,15 @@
-#N canvas 313 181 492 607 10;
+#N canvas 655 244 492 579 10;
 #X obj 173 102 tgl 15 0 \$0-foo \$0-is_active empty 17 7 0 10 -66577
 -262144 -262144 0 1;
-#X obj 102 102 cnv 15 14 15 empty \$0-speaker_no 1 1 8 0 10 -69569
+#X obj 102 102 cnv 15 14 15 empty \$0-speaker_no 6 1 8 0 10 -69569
 -262144 0;
-#X obj 102 118 cnv 15 86 14 empty \$0-sample_name 1 1 8 0 10 -69569
+#X obj 102 118 cnv 15 86 14 empty \$0-sample_name float 1 8 0 10 -69569
 -262144 0;
 #X obj 173 133 cnv 15 14 15 empty \$0-net_conn empty 1 8 0 10 -24198
 -262144 0;
-#X obj 102 133 cnv 15 40 15 empty \$0-text_cnv_ip 100: 1 8 0 10 -128992
+#X obj 102 133 cnv 15 40 15 empty \$0-text_cnv_ip 102: 1 8 0 10 -128992
 -262144 0;
-#X obj 136 133 cnv 15 36 15 empty \$0-text_cnv_port 10000 1 8 0 10
+#X obj 136 133 cnv 15 36 15 empty \$0-text_cnv_port 10001 1 8 0 10
 -128992 -262144 0;
 #X obj 41 447 udpsend;
 #X msg 82 416 disconnect;
@@ -26,7 +26,7 @@
 #X obj 41 207 r \$0-init;
 #X obj 57 250 r \$0-ip;
 #X obj 62 276 r \$0-port;
-#X msg 41 351 100 10000;
+#X msg 41 351 102 10001;
 #N canvas 651 223 696 684 calculate_distance 0;
 #X obj 399 101 iem_r;
 #X obj 169 96 iem_r;
@@ -41,7 +41,7 @@
 #N canvas 227 364 450 300 send_dist 0;
 #X obj 162 88 inlet;
 #X obj 162 109 t b f;
-#X msg 162 176 label dist:101;
+#X msg 162 176 label dist:409;
 #X obj 189 132 makefilename %d;
 #X obj 162 199 send \$0-text_cnv_dist;
 #X msg 189 152 set label dist:\$1;
@@ -113,12 +113,12 @@
 #X floatatom 110 469 5 0 0 0 - - -, f 5;
 #X obj 183 57 iem_r;
 #X obj 183 6 r \$0-row;
-#X obj 116 102 cnv 15 56 15 empty \$0-text_cnv_dist dist:101 1 8 0
+#X obj 116 102 cnv 15 56 15 empty \$0-text_cnv_dist dist:409 1 8 0
 10 -69569 -262144 0;
 #X obj 282 293 list fromsymbol;
 #X obj 282 338 list tosymbol;
 #X obj 282 271 symbol;
-#X msg 281 401 label x;
+#X msg 281 401 label float;
 #X msg 281 358 set label \$1;
 #X obj 281 423 send \$0-sample_name;
 #X obj 281 378 t b a;
@@ -126,14 +126,14 @@
 #X msg 313 173 kuikikuku.wav;
 #X msg 309 198 asdasdaasdasasdasdas;
 #X msg 316 125 mm;
-#N canvas 859 171 827 542 init 0;
+#N canvas 492 165 827 542 init 0;
 #X obj 104 412 \$1;
 #X obj 119 315 \$2;
 #X obj 135 222 \$3;
 #N canvas 374 165 450 300 send_no 0;
 #X obj 149 71 inlet;
 #X obj 149 93 t b f;
-#X msg 149 160 label 1;
+#X msg 149 160 label 6;
 #X msg 176 136 set label \$1;
 #X obj 176 116 makefilename %d;
 #X obj 149 183 send \$0-speaker_no;
@@ -150,7 +150,7 @@
 #X obj 176 116 makefilename %d;
 #X obj 149 183 send \$0-text_cnv_port;
 #X msg 176 136 set label \$1;
-#X msg 149 160 label 10000;
+#X msg 149 160 label 10001;
 #X connect 0 0 1 0;
 #X connect 1 0 5 0;
 #X connect 1 1 2 0;
@@ -163,7 +163,7 @@
 #X obj 149 93 t b f;
 #X obj 176 116 makefilename %d;
 #X obj 149 183 send \$0-text_cnv_ip;
-#X msg 149 160 label 100:;
+#X msg 149 160 label 102:;
 #X msg 176 135 set label \$1:;
 #X floatatom 205 81 5 0 0 0 - - -, f 5;
 #X connect 0 0 1 0;
@@ -330,6 +330,7 @@
 #X restore 393 86 pd pick_col;
 #X obj 393 65 r \$0-row;
 #X floatatom 190 226 5 0 0 0 - - -, f 5;
+#X obj 250 14 namecanvas preset-1;
 #X connect 0 0 21 0;
 #X connect 1 0 9 0;
 #X connect 2 0 7 0;
