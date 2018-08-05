@@ -1,0 +1,4 @@
+zero_cross.pd FFM2.pd mill~.c 5_9.jpg 79.png;
+x xx xxx xxxx xxxxx;
+d e f e k;
+;

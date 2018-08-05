@@ -1,0 +1,18 @@
+#N canvas 396 252 311 341 10;
+#X obj 22 22 r kill_border;
+#X obj 22 203 sys_gui;
+#X msg 82 116 set the_mbar [\$1 cget -menu];
+#X obj 22 137 symbol;
+#X msg 22 162 \$1 configure -menu "";
+#X obj 55 93 t s s;
+#X obj 22 47 t b b;
+#X obj 55 72 window_name 1;
+#X connect 0 0 6 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 1 0;
+#X connect 5 0 3 1;
+#X connect 5 1 2 0;
+#X connect 6 0 3 0;
+#X connect 6 1 7 0;
+#X connect 7 0 5 0;
