@@ -1,4 +1,3 @@
-zero_cross.pd FFM2.pd mill~.c 5_9.jpg 79.png;
-x xx xxx xxxx xxxxx;
-d e f e k;
-;
+XOXO1.png XOXO2.png XOXO3.png XOXO4.png;
+a.out nd.txt out.ogv traktor.xcf;
+rozhovor.txt sonar.pd stars.png stepan.pd;
