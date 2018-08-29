@@ -1,0 +1,38 @@
+#N canvas 596 510 461 404 10;
+#X obj 152 316 netsend;
+#X obj 152 97 \$1;
+#X obj 152 32 initbang;
+#X obj 152 120 + 99;
+#X msg 152 168 connect 192.168.1.100 60000;
+#X msg 152 144 set connect 192.168.1.\$1 60000;
+#X obj 30 209 f;
+#X obj 30 86 r init_net_sf;
+#X obj 30 112 t b b;
+#X msg 30 228 send sf_sum \$1;
+#X obj 33 59 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 45 173 r number_of_heads;
+#X msg 173 229 send test \$1;
+#X floatatom 175 206 5 0 0 0 - - -, f 5;
+#X obj 183 249 r net_disconnect;
+#X msg 183 287 disconnect;
+#X obj 183 268 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 52 188 create as many samplers as amout of heads;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 3 0 5 0;
+#X connect 4 0 0 0;
+#X connect 5 0 4 0;
+#X connect 6 0 9 0;
+#X connect 7 0 8 0;
+#X connect 8 0 6 0;
+#X connect 8 1 4 0;
+#X connect 9 0 0 0;
+#X connect 10 0 8 0;
+#X connect 11 0 6 1;
+#X connect 12 0 0 0;
+#X connect 13 0 12 0;
+#X connect 14 0 16 0;
+#X connect 15 0 0 0;
+#X connect 16 0 15 0;
