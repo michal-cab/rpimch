@@ -1,4 +1,4 @@
-waspfly.wav wood2.wav click1.wav amb1.wav;
-a.out nd.txt out.ogv traktor.xcf;
-rozhovor.txt sonar.pd stars.png stepan.pd;
+moka01.wav moka02.wav moka03.wav machine1.wav polyst02.wav pivo.wav;
+podpatky01.wav bourka1.wav wood1.wav soil1.wav ice.wav vidlicka.wav;
+amb1.wav amb1.wav click2.wav drone1.wav qasm.wav qasm.wav;
 ;
